@@ -6,10 +6,12 @@ import { createMemoryHistory, createRouter } from "vue-router";
 import Home from "./views/Home.vue";
 import Gallery from "./views/Gallery.vue";
 import NotFound from "./views/NotFound.vue";
+import About from "./views/About.vue";
 
 const routes = [
-  { path: '/', component: Home },
-  { path: '/designs', component: Gallery },
+  { path: '/', name: "Tessaworks", component: Home },
+  { path: '/designs', name: "Designs", component: Gallery },
+  { path: '/about', name: "About", component: About },
   { path: '/:catchAll(.*)*', name: 'NotFound', component: NotFound },
 ];
 
@@ -20,4 +22,4 @@ const router = createRouter({
 
 createApp(App)
   .use(router)
-  .mount('#app')
+  .mount('#app');

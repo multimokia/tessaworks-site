@@ -9,6 +9,7 @@
   </RouterLink>
   <RouterLink to="/">Home</RouterLink>
   <RouterLink to="/designs">Designs</RouterLink>
+  <RouterLink to="/about">About</RouterLink>
 </div>
 </template>
 

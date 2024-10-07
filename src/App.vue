@@ -1,5 +1,6 @@
 <template>
   <Navbar />
+  <h1 class="relative font-bold text-7xl right-1/4 text-transparent font-outline-2">{{ $route.name }}</h1>
   <RouterView/>
   <Footer class="w-screen"/>
 </template>

@@ -1,33 +1,38 @@
 <template>
-<div class="relative top-1 flex flex-col flex-wrap justify-center gap-2 w-[50vw] h-[100vh] mosaic">
+<div class="relative top-1 flex flex-col flex-wrap justify-center gap-2 w-[50vw] h-[90vh] mosaic">
   <GalleryImage
     src="/gallery-images/tessa-hug.png"
     alt="Tessa"
     artist="Inku"
+    href="https://x.com/InkuDraws"
     class="art-large"
   />
   <GalleryImage
     src="/gallery-images/tessa-damaged.jpg"
     alt="Tessa"
     artist="9_9bird"
+    href="https://x.com/9_9bird"
     class="art-medium"
   />
   <GalleryImage
     src="/gallery-images/tessa-bg.jpg"
     alt="Tessa"
     artist="9_9bird"
+    href="https://x.com/9_9bird"
     class="art-small"
   />
   <GalleryImage
     src="/gallery-images/tessa-moon.png"
     alt="Tessa"
     artist="Briar Young"
+    href="https://youtube.com/@briaryoungmmd?si=HZUq6k94GML7sL_G"
     class="art-large"
   />
   <GalleryImage
     src="/gallery-images/tessa-shahala.jpg"
     alt="Tessa"
     artist="9_9bird"
+    href="https://x.com/9_9bird"
     class="art-small"
   />
 </div>
