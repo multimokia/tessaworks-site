@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
-import { createMemoryHistory, createRouter } from "vue-router";
+import {createRouter, createWebHistory} from "vue-router";
 
 import Home from "./views/Home.vue";
 import Gallery from "./views/Gallery.vue";
@@ -12,11 +12,11 @@ const routes = [
   { path: '/', name: "Tessaworks", component: Home },
   { path: '/designs', name: "Designs", component: Gallery },
   { path: '/about', name: "About", component: About },
-  { path: '/:catchAll(.*)*', name: 'NotFound', component: NotFound },
+  { path: '/:catchAll(.*)*', name: 'Not Found', component: NotFound },
 ];
 
 const router = createRouter({
-  history: createMemoryHistory(),
+  history: createWebHistory(),
   routes
 });
 
