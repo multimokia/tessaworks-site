@@ -1,7 +1,7 @@
 <template>
   <Navbar />
-  <h1 class="relative font-bold text-7xl right-1/4 text-transparent font-outline-2">{{ $route.name }}</h1>
-  <RouterView/>
+  <h1 class="relative font-bold text-7xl text-transparent font-outline-2 left-2 md:right-1/4 sm:left-auto">{{ $route.name }}</h1>
+  <RouterView class="px-4"/>
   <Footer class="w-screen"/>
 </template>
 

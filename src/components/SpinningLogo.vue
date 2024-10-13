@@ -1,9 +1,11 @@
 <template>
-<img
-  src="/src/assets/tessaworks-logo-simple.png"
-  alt="tessaworks-logo"
-  class="w-1/3 animate-spin overflow-hidden"
-/>
+  <div class="spinner w-1/3 sm:w-5">
+    <img
+      src="/src/assets/tessaworks-logo-simple.png"
+      alt="tessaworks-logo"
+      class="animate-spin p-1"
+    />
+  </div>
 </template>
 
 <style scoped>
@@ -16,4 +18,10 @@
   animation: spin 3s ease-in-out infinite;
   transition-timing-function: ease-in;
 }
+
+.spinner {
+  background: radial-gradient(circle at center, #5c718a99 0, transparent 80%);
+}
 </style>
+<script setup lang="ts">
+</script>

@@ -1,5 +1,5 @@
 <template xmlns="http://www.w3.org/1999/html">
-  <div class="flex flex-col max-w-3xl gap-4 text-lg items-center">
+  <div class="flex flex-col max-w-3xl gap-4 text-lg items-center px-4">
     <h2 class="self-start text-3xl font-bold">Origins</h2>
     <p>
       Tessa was born with a degenerative disease. One that was slowly consuming her body. Her parents were some of the

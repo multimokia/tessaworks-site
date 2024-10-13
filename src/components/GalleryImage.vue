@@ -1,5 +1,5 @@
 <template>
-<div class="max-w-1/3">
+<div class="sm:max-w-1/3">
   <img :src="src" :alt="alt" class="rounded-md" />
   <span class="text-gray-500 p-6">
     Art by <a :href="href" target="_blank">{{ artist }}</a>

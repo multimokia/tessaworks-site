@@ -1,73 +1,85 @@
 <template>
-<div class="relative top-1 flex flex-col flex-wrap justify-center gap-2 w-[50vw] h-[90vh] mosaic">
-  <GalleryImage
-    src="/gallery-images/tessa-hug.png"
-    alt="Tessa"
-    artist="Inku"
-    href="https://x.com/InkuDraws"
-    class="art-large"
-  />
-  <GalleryImage
-    src="/gallery-images/tessa-damaged.jpg"
-    alt="Tessa"
-    artist="9_9bird"
-    href="https://x.com/9_9bird"
-    class="art-medium"
-  />
-  <GalleryImage
-    src="/gallery-images/tessa-bg.jpg"
-    alt="Tessa"
-    artist="9_9bird"
-    href="https://x.com/9_9bird"
-    class="art-small"
-  />
-  <GalleryImage
-    src="/gallery-images/tessa-moon.png"
-    alt="Tessa"
-    artist="Briar Young"
-    href="https://youtube.com/@briaryoungmmd?si=HZUq6k94GML7sL_G"
-    class="art-large"
-  />
-  <GalleryImage
-    src="/gallery-images/tessa-shahala.jpg"
-    alt="Tessa"
-    artist="9_9bird"
-    href="https://x.com/9_9bird"
-    class="art-small"
-  />
-</div>
+  <MosiacGallery v-if="mq.mdPlus">
+    <GalleryImage
+      v-for="imagedata of images"
+      :key="imagedata.src"
+      :src="imagedata.src"
+      :alt="imagedata.alt"
+      :artist="imagedata.artist"
+      :href="imagedata.url"
+      :class="imagedata.className"
+    />
+  </MosiacGallery>
+  <div v-else class="flex flex-col gap-4 items-center">
+    <GalleryImage
+      v-for="imagedata of images"
+      :key="imagedata.src"
+      :src="imagedata.src"
+      :alt="imagedata.alt"
+      :artist="imagedata.artist"
+      :href="imagedata.url"
+      :class="imagedata.className"
+    />
+  </div>
 </template>
 
 <script setup lang="ts">
 //https://flexboxpatterns.com/mosaic
 import GalleryImage from "../components/GalleryImage.vue";
+import MosiacGallery from "@/components/MosiacGallery.vue";
+import { useMq } from "vue3-mq";
+
+const mq = useMq();
+
+const images = [
+  {
+    src: "/gallery-images/tessa-hug.png",
+    alt: "Tessa hugging another OC named Lisbeth",
+    artist: "Inku",
+    url: "https://x.com/inkudraws",
+    className: "art-large"
+  },
+  {
+    src: "/gallery-images/tessa-damaged.jpg",
+    alt: "Tessa sitting against a workstation in her lab. Her left arms is broken off revealing metal shards and broken wires.",
+    artist: "9_9bird",
+    url: "https://x.com/9_9bird",
+    className: "art-medium"
+  },
+  {
+    src: "/gallery-images/tessa-bg.jpg",
+    alt: "Tessa standing by a space-station window, overlooking the planet below. She seems melancholic.",
+    artist: "9_9bird",
+    url: "https://x.com/9_9bird",
+    className: "art-large"
+  },
+  {
+    src: "/gallery-images/tessa-moon.png",
+    alt: "Tessa sitting melancholically on the moon, staring off into the distance.",
+    artist: "Briar Young",
+    url: "https://youtube.com/@briaryoungmmd?si=HZUq6k94GML7sL_G",
+    className: "art-medium"
+  },
+  {
+    src: "/gallery-images/tessa-shahala.jpg",
+    alt: "Tessa with her back turned to the camera, facing off against Sha'Hala from Remnant 2. A smirk is on her face",
+    artist: "9_9bird",
+    url: "https://x.com/9_9bird",
+    className: "art-medium"
+  },
+]
 </script>
 
 <style scoped>
-.mosaic div {
-  position: relative;
-}
-
-.mosaic div::after {
-  display: block;
-  width: 11px;
-  height: 1px;
-  position: absolute;
-  top: 0;
-  left: 100%;
-  visibility: hidden;
-  content: "";
-}
-
 .art-small {
-  height: 30vh;
+  width: 30vw;
 }
 
 .art-medium {
-  height: 50vh;
+  width: 50vw;
 }
 
 .art-large {
-  height: 70vh;
+  width: 70vw;
 }
 </style>

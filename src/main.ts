@@ -7,6 +7,7 @@ import Home from "./views/Home.vue";
 import Gallery from "./views/Gallery.vue";
 import NotFound from "./views/NotFound.vue";
 import About from "./views/About.vue";
+import { Vue3Mq } from "vue3-mq";
 
 const routes = [
   { path: '/', name: "Tessaworks", component: Home },
@@ -22,4 +23,6 @@ const router = createRouter({
 
 createApp(App)
   .use(router)
+  // @ts-expect-error vue3mq doesn't have proper typescript support
+  .use(Vue3Mq, { preset: "tailwind" })
   .mount('#app');
