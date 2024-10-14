@@ -8,6 +8,7 @@ import Gallery from "./views/Gallery.vue";
 import NotFound from "./views/NotFound.vue";
 import About from "./views/About.vue";
 import { Vue3Mq } from "vue3-mq";
+import VuePhotoAlbum from 'vue-photo-album'
 
 const routes = [
   { path: '/', name: "Tessaworks", component: Home },
@@ -25,4 +26,5 @@ createApp(App)
   .use(router)
   // @ts-expect-error vue3mq doesn't have proper typescript support
   .use(Vue3Mq, { preset: "tailwind" })
+  .use(VuePhotoAlbum)
   .mount('#app');

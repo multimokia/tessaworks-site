@@ -1,25 +1,22 @@
 <template>
-<div class="sm:max-w-1/3">
-  <img :src="src" :alt="alt" class="rounded-md" />
-  <span class="text-gray-500 p-6">
-    Art by <a :href="href" target="_blank">{{ artist }}</a>
+<div class="">
+  <img :src="photo.src" :alt="photo.alt" class="rounded-md" />
+  <span class="text-gray-500">
+    Art by <a :href="photo.href" target="_blank">{{ photo.artist }}</a>
   </span>
 </div>
 </template>
 
-<script lang="ts">
-import Footer from "./Footer.vue";
+<script setup lang="ts">
+import { type PhotoRendererMetadata } from "vue-photo-album";
 
-export default {
-  components: {Footer},
-  props: {
-    src: String,
-    alt: String,
-    artist: String,
-    href: String,
-  },
-  setup() {  }
-}
+type GalleryImageProps = PhotoRendererMetadata & {
+  artist: String,
+  href: String,
+};
+
+defineProps<GalleryImageProps>();
+
 </script>
 <style scoped>
 a {
