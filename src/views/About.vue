@@ -136,7 +136,7 @@
     </p>
     <p>
       Nobody, nothing around....or so she thought. There was one. A void witch who resided there, she too was alone.
-      But she _wanted_ to visit others, she had her eye on humanity already.
+      But she <i>wanted</i> to visit others, she had her eye on humanity already.
     </p>
     <p>
       And so they talked, Tessa and her resentment. The witch, Lewn, and her admiration.
@@ -156,7 +156,7 @@
     <p>
       Eventually, she would be assigned to keep track of a mage, following reports of a new region of space having been
       created out of the blue. Turns out she's very kind, and offered her a place to set up a lab and stay in that space.
-      Which she uses both for her mission, but also because between the residents there, they're a bunch of found family
+      Which she uses both for her mission, but also because between the residents there, they're a bunch of found family.
     </p>
   </div>
 </template>
