@@ -11,8 +11,8 @@
 import { type PhotoRendererMetadata } from "vue-photo-album";
 
 type GalleryImageProps = PhotoRendererMetadata & {
-  artist: String,
-  href: String,
+  artist?: String,
+  href?: String,
 };
 
 defineProps<GalleryImageProps>();

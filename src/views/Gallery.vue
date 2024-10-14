@@ -4,6 +4,7 @@
     layout="masonry"
     class="max-w-screen-lg"
     :photo-renderer="GalleryImage"
+    @click="handlePhotoClick"
   />
 </template>
 
@@ -11,6 +12,10 @@
 import { ref } from "@vue/reactivity";
 import { PhotoAlbum } from "vue-photo-album";
 import GalleryImage from "@/components/GalleryImage.vue";
+
+function handlePhotoClick(payload) {
+  console.log(payload);
+}
 
 const images = ref([
   {
