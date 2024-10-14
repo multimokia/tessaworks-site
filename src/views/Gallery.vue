@@ -10,10 +10,11 @@
 
 <script setup lang="ts">
 import { ref } from "@vue/reactivity";
-import { PhotoAlbum } from "vue-photo-album";
+import {PhotoAlbum, PhotoClickPayload} from "vue-photo-album";
 import GalleryImage from "@/components/GalleryImage.vue";
+import {PhotoWithArtistData} from "@/types/PhotoWithArtistData.ts";
 
-function handlePhotoClick(payload) {
+function handlePhotoClick(payload: PhotoClickPayload<PhotoWithArtistData>) {
   console.log(payload);
 }
 

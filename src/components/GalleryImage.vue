@@ -9,10 +9,11 @@
 
 <script setup lang="ts">
 import { type PhotoRendererMetadata } from "vue-photo-album";
+import { PhotoWithArtistData } from "@/types/PhotoWithArtistData.ts";
+
 
 type GalleryImageProps = PhotoRendererMetadata & {
-  artist?: String,
-  href?: String,
+  photo: PhotoWithArtistData
 };
 
 defineProps<GalleryImageProps>();
