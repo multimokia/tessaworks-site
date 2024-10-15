@@ -2,21 +2,26 @@
   <PhotoAlbum
     :photos="images"
     layout="masonry"
-    class="max-w-screen-lg"
     :photo-renderer="GalleryImage"
     @click="handlePhotoClick"
   />
+  <Modal :is-open="isModalOpen" @hide-modal="handleModalHide">
+    <div class="flex gap-4 flex-row">
+      <img
+        :src="selectedImage.src"
+        :alt="selectedImage.alt"
+        class="max-w-1/3 max-h-2/3vh"
+      />
+    </div>
+  </Modal>
 </template>
 
 <script setup lang="ts">
 import { ref } from "@vue/reactivity";
 import {PhotoAlbum, PhotoClickPayload} from "vue-photo-album";
 import GalleryImage from "@/components/GalleryImage.vue";
-import {PhotoWithArtistData} from "@/types/PhotoWithArtistData.ts";
-
-function handlePhotoClick(payload: PhotoClickPayload<PhotoWithArtistData>) {
-  console.log(payload);
-}
+import { PhotoWithArtistData } from "@/types/PhotoWithArtistData.ts";
+import Modal from "@/components/Modal.vue";
 
 const images = ref([
   {
@@ -65,4 +70,25 @@ const images = ref([
     height: 1508,
   },
 ]);
+
+let selectedImage: PhotoWithArtistData = images[0];
+let isModalOpen = false;
+
+function openModal() {
+  isModalOpen = true;
+}
+
+function closeModal() {
+  isModalOpen = false;
+}
+
+function handleModalHide() {
+  closeModal();
+}
+
+function handlePhotoClick(payload: PhotoClickPayload<PhotoWithArtistData>) {
+  console.table(payload.photo.src);
+  selectedImage = payload.photo;
+  openModal();
+}
 </script>
