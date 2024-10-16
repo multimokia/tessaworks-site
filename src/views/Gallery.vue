@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full px-4">
+  <div class="w-2/3 px-4">
     <PhotoAlbum
       :photos="images"
       layout="masonry"
@@ -78,7 +78,7 @@ const images = ref([
   },
 ]);
 
-let selectedImage = ref<PhotoWithArtistData>(images.value[0]);
+const selectedImage = ref<PhotoWithArtistData>(images.value[0]);
 const isModalOpen = ref(false);
 
 function openModal() {

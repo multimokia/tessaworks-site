@@ -2,7 +2,7 @@
 <div class="">
   <img :src="photo.src" :alt="photo.alt" class="rounded-md" />
   <span class="text-gray-500">
-    Art by <a :href="photo.href" target="_blank">{{ photo.artist }}</a>
+    Art by <a :href="photo.url" target="_blank">{{ photo.artist }}</a>
   </span>
 </div>
 </template>
