@@ -1,17 +1,24 @@
 <template>
-  <PhotoAlbum
-    :photos="images"
-    layout="masonry"
-    :photo-renderer="GalleryImage"
-    @click="handlePhotoClick"
-  />
+  <div class="w-full px-4">
+    <PhotoAlbum
+      :photos="images"
+      layout="masonry"
+      :photo-renderer="GalleryImage"
+      @click="handlePhotoClick"
+    />
+  </div>
   <Modal :is-open="isModalOpen" @hide-modal="handleModalHide">
-    <div class="flex gap-4 flex-row">
-      <img
-        :src="selectedImage.src"
-        :alt="selectedImage.alt"
-        class="max-w-1/3 max-h-2/3vh"
-      />
+    <div class="flex gap-4 flex-col max-w-2/3vw">
+      <div class="w-full flex flex-col items-center">
+        <img
+          :src="selectedImage.src"
+          :alt="selectedImage.alt"
+          class="max-h-2/3vh max-w-2/3vw bg-zinc-800"
+        />
+      </div>
+      <span>Art by <a :href="selectedImage.url">{{ selectedImage.artist }}</a></span>
+      <hr class="border-zinc-500"/>
+      {{ selectedImage.alt }}
     </div>
   </Modal>
 </template>
@@ -71,24 +78,35 @@ const images = ref([
   },
 ]);
 
-let selectedImage: PhotoWithArtistData = images[0];
-let isModalOpen = false;
+let selectedImage = ref<PhotoWithArtistData>(images.value[0]);
+const isModalOpen = ref(false);
 
 function openModal() {
-  isModalOpen = true;
+  isModalOpen.value = true;
 }
 
 function closeModal() {
-  isModalOpen = false;
+  isModalOpen.value = false;
 }
 
 function handleModalHide() {
+  console.log("hide modal");
   closeModal();
 }
 
 function handlePhotoClick(payload: PhotoClickPayload<PhotoWithArtistData>) {
   console.table(payload.photo.src);
-  selectedImage = payload.photo;
+  selectedImage.value = payload.photo;
   openModal();
 }
 </script>
+
+<style scoped>
+a {
+  color: #7379bf;
+}
+
+a:hover {
+  color: #5e64c5;
+}
+</style>

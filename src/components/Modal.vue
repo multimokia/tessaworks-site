@@ -6,15 +6,21 @@
     >
       <div class="modal-wrapper flex justify-center place-items-center">
         <div class="bg-zinc-700 fixed w-fit flex flex-row justify-center place-items-center">
-          <div class="flex flex-col">
-            <div class="flex flex-row self-end">
+          <div class="">
+            <div class="absolute float-end top-4 right-4 flex flex-row">
               <button
                 type="button"
                 class="close"
                 @click="hideModal"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width={1.5} stroke="currentColor" class="size-7">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     fill="none"
+                     viewBox="0 0 24 24"
+                     stroke-width={1.5}
+                     stroke="currentColor"
+                     class="size-10 hover:stroke-white transition-colors"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/>
                 </svg>
               </button>
             </div>
@@ -30,10 +36,7 @@
 
 <script setup lang="ts">
 const emit = defineEmits(["hideModal"])
-type ModalProps = {
-  isOpen: boolean;
-}
-defineProps<ModalProps>();
+defineProps({ isOpen: Boolean });
 
 function hideModal() {
   emit("hideModal");

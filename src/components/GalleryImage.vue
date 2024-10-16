@@ -20,11 +20,4 @@ defineProps<GalleryImageProps>();
 
 </script>
 <style scoped>
-a {
-  color: #7379bf;
-}
-
-a:hover {
-  color: #5e64c5;
-}
 </style>

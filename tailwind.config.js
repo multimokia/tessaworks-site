@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      width: {
+        '2/3vw': '66.6666vw'
+      },
       maxWidth: {
         '1/3': '33.33333%',
         '1/2': '50%',
