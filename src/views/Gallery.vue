@@ -7,20 +7,22 @@
       @click="handlePhotoClick"
     />
   </div>
-  <Modal :is-open="isModalOpen" @hide-modal="handleModalHide">
-    <div class="flex gap-4 flex-col max-w-2/3vw">
-      <div class="w-full flex flex-col items-center">
-        <img
-          :src="selectedImage.src"
-          :alt="selectedImage.alt"
-          class="max-h-2/3vh max-w-2/3vw bg-zinc-800"
-        />
+  <Transition name="slide-fade">
+    <Modal :is-open="isModalOpen" @hide-modal="handleModalHide">
+      <div class="flex gap-4 flex-col max-w-2/3vw">
+        <div class="w-full flex flex-col items-center">
+          <img
+            :src="selectedImage.src"
+            :alt="selectedImage.alt"
+            class="max-h-2/3vh max-w-2/3vw bg-zinc-800"
+          />
+        </div>
+        <span>Art by <a :href="selectedImage.url">{{ selectedImage.artist }}</a></span>
+        <hr class="border-zinc-500"/>
+        {{ selectedImage.alt }}
       </div>
-      <span>Art by <a :href="selectedImage.url">{{ selectedImage.artist }}</a></span>
-      <hr class="border-zinc-500"/>
-      {{ selectedImage.alt }}
-    </div>
-  </Modal>
+    </Modal>
+  </Transition>
 </template>
 
 <script setup lang="ts">
@@ -90,12 +92,10 @@ function closeModal() {
 }
 
 function handleModalHide() {
-  console.log("hide modal");
   closeModal();
 }
 
 function handlePhotoClick(payload: PhotoClickPayload<PhotoWithArtistData>) {
-  console.table(payload.photo.src);
   selectedImage.value = payload.photo;
   openModal();
 }

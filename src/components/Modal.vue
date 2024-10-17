@@ -35,13 +35,22 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted } from "@vue/runtime-core";
+
 const emit = defineEmits(["hideModal"])
-defineProps({ isOpen: Boolean });
+const props = defineProps({ isOpen: Boolean });
 
 function hideModal() {
   emit("hideModal");
 }
 
+onMounted(() => {
+  document.addEventListener("keydown", (e) => {
+    if (props.isOpen && e.keyCode == 27) {
+      hideModal();
+    }
+  });
+});
 </script>
 
 <style scoped>
