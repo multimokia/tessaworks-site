@@ -78,6 +78,15 @@ const images = ref([
     width: 2388,
     height: 1508,
   },
+  {
+    src: "/gallery-images/tessa-tarot.png",
+    alt: "A tarot card, 'The Magician' with Tessa as the focus. Her left hand is raised, but empty. Her eyes glow with a faint blue. Her hair floats up and the cosmos in the background spiral in toward her. The warp core in her abdomen glows with an event horizon surround it as her right hand holds the strings of light. Clocks adorn the white borders of the piece.",
+    artist: "XShurin",
+    url: "https://www.pixiv.net/en/users/29790126",
+    className: "art-large",
+    width: 963,
+    height: 1663,
+  },
 ]);
 
 const selectedImage = ref<PhotoWithArtistData>(images.value[0]);
