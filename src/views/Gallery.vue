@@ -34,6 +34,15 @@ import Modal from "@/components/Modal.vue";
 
 const images = ref([
   {
+    src: "/gallery-images/tessa-schematics.jpg",
+    alt: "Engineering diagrams displaying Tessa's mechanical arms, legs, and her warp core. Her arms and legs are at revision 16 while her warp core is at revision 2. Diagrams include external views, internal views, and cross sectional views of the arms and legs.",
+    artist: "XShurin",
+    url: "https://www.pixiv.net/en/users/29790126",
+    className: "art-medium",
+    width: 4093,
+    height: 2894,
+  },
+  {
     src: "/gallery-images/tessa-damaged.jpg",
     alt: "Tessa sitting against a workstation in her lab. Her left arms is broken off revealing metal shards and broken wires.",
     artist: "9_9bird",
@@ -86,7 +95,7 @@ const images = ref([
     className: "art-large",
     width: 963,
     height: 1663,
-  },
+  }
 ]);
 
 const selectedImage = ref<PhotoWithArtistData>(images.value[0]);
