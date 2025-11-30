@@ -1,6 +1,11 @@
 <template>
   <Navbar />
-  <h1 class="relative font-bold text-7xl text-transparent font-outline-2 left-2 md:right-1/4 sm:left-auto">{{ $route.name }}</h1>
+  <h1
+    v-if="shouldDisplayRouteName"
+    class="relative font-bold text-7xl text-transparent font-outline-2 left-2 md:right-1/4 sm:left-auto"
+  >
+    {{ $route.name }}
+  </h1>
   <RouterView class="px-4" ref="routerView"/>
   <Transition name="fade">
     <FloatingScrollToTopButton v-if="isTopOfPage" />
@@ -13,8 +18,14 @@ import Navbar from "./components/Navbar.vue";
 import Footer from "./components/Footer.vue";
 import FloatingScrollToTopButton from "@/components/FloatingScrollToTopButton.vue";
 import { onMounted, onUnmounted, ref } from '@vue/runtime-core';
+import {computed} from "vue";
+import {useRoute} from "vue-router";
 
-let isTopOfPage = ref<boolean>(false);
+const route = useRoute();
+
+const isTopOfPage = ref<boolean>(false);
+const shouldDisplayRouteName = computed(() => route.name !== "Tessaworks")
+
 
 function handleScroll() {
   isTopOfPage.value = window.scrollY > 0;

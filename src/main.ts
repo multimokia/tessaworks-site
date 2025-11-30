@@ -9,11 +9,13 @@ import NotFound from "./views/NotFound.vue";
 import About from "./views/About.vue";
 import { Vue3Mq } from "vue3-mq";
 import VuePhotoAlbum from 'vue-photo-album'
+import Parallax from "@/views/ParallaxView.vue";
 
 const routes = [
   { path: '/', name: "Tessaworks", component: Home },
   { path: '/designs', name: "Designs", component: Gallery },
   { path: '/about', name: "About", component: About },
+  { path: '/parallax', name: "Parallax", component: Parallax },
   { path: '/:catchAll(.*)*', name: 'Not Found', component: NotFound },
 ];
 
