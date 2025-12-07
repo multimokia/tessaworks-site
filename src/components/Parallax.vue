@@ -85,6 +85,7 @@ const layer1 = computed(() => ({
 
 const layer2 = computed<CSSProperties>(() => ({
   ...layerBase,
+  // @ts-expect-error this is fine
   top: `-${target.value?.clientHeight / 1.6}px`,
   transform: `translate3d(${parallax.tilt * 30}px, ${parallax.roll * 30}px, 0px)`,
 }));
