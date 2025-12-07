@@ -90,11 +90,6 @@ const layer2 = computed<CSSProperties>(() => ({
   transform: `translate3d(${parallax.tilt * 30}px, ${parallax.roll * 30}px, 0px)`,
 }));
 
-const layer3 = computed(() => ({
-  ...layerBase,
-  transform: `translate3d(${parallax.tilt * 40}px, ${parallax.roll * 40}px, 0px)`,
-}));
-
 const layer4 = computed(() => ({
   ...layerBase,
   transform: `translate3d(${parallax.tilt * 50}px, ${parallax.roll * 50}px, 0px)`,
