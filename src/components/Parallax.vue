@@ -20,7 +20,7 @@
           <img class="absolute animate-spin-reverse" :src="blackHoleOtherCores" style="transform-origin: 49% 47%" />
         </div>
 
-        <div :style="layer3">
+        <div :style="layer1">
           <img class="absolute animate-hover" :src="bigArmsFront" />
         </div>
 
@@ -33,6 +33,10 @@
 
         <div :style="layer5">
           <img class="absolute animate-hover-slow" :src="smallArms" />
+        </div>
+
+        <div class="absolute bottom-10 right-0">
+          <img class="w-1/2 h-1/2" :src="signature" />
         </div>
       </div>
     </div>
@@ -53,6 +57,7 @@ import bigArmsFront from "@/assets/tessa-parallax/big-arms-front.png";
 import tessa from "@/assets/tessa-parallax/tessa-noglow.png"
 import tessaGlow from "@/assets/tessa-parallax/tessa-glow.png"
 import smallArms from "@/assets/tessa-parallax/small-arms.png"
+import signature from "@/assets/tessa-parallax/signature.png"
 
 const target = useTemplateRef('target');
 const parallax = reactive(useParallax(target));
@@ -80,7 +85,7 @@ const layer1 = computed(() => ({
 
 const layer2 = computed<CSSProperties>(() => ({
   ...layerBase,
-  top: `-${target.value?.clientHeight || 0 / 1.7}px`,
+  top: `-${target.value?.clientHeight / 1.6}px`,
   transform: `translate3d(${parallax.tilt * 30}px, ${parallax.roll * 30}px, 0px)`,
 }));
 
