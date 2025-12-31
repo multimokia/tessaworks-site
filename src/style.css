@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@plugin "daisyui";
 
 @theme {
   --width-2\/3vw: 66.6666vw;

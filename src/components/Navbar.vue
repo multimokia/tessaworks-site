@@ -1,5 +1,5 @@
 <template>
-<div class="w-screen flex flex-row h-1/6 space-x-4 place-items-center text-white navbar drop-shadow-md">
+<div class="navbar h-1/6 space-x-4 place-items-center text-white drop-shadow-md">
   <RouterLink to="/">
     <img
       src="@/assets/tessaworks-logo-full.png"
@@ -7,11 +7,11 @@
       class="max-h-28 px-6"
     />
   </RouterLink>
-  <div class="flex flex-row gap-4 pr-4">
-    <RouterLink to="/" active-class="underline">Home</RouterLink>
-    <RouterLink to="/designs" active-class="underline">Designs</RouterLink>
-    <RouterLink to="/about" active-class="underline">About</RouterLink>
-  </div>
+  <ul class="menu menu-horizontal">
+    <li><RouterLink to="/">Home</RouterLink></li>
+    <li><RouterLink to="/designs">Designs</RouterLink></li>
+    <li><RouterLink to="/about">About</RouterLink></li>
+  </ul>
 
 </div>
 </template>

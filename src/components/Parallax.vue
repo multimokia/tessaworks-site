@@ -3,11 +3,11 @@
     <div class="h-full flex flex-row items-center">
       <div
         ref="target"
-        class="relative overflow-hidden w-full h-full"
+        class="relative overflow-hidden w-full h-full animation-container"
         :style="targetStyle"
       >
         <div :style="layer0">
-          <img class="absolute object-cover" :src="bg" />
+          <img class="absolute object-cover" style="transform: translateY(-25%)" :src="bg" />
         </div>
 
         <div :style="layer1">
@@ -80,24 +80,24 @@ const layer0 = computed(() => ({
 
 const layer1 = computed(() => ({
   ...layerBase,
-  transform: `translate3d(${parallax.tilt * 20}px, ${parallax.roll * 20}px, 0px)`,
+  transform: `translate3d(${parallax.tilt * 15}px, ${parallax.roll * 15}px, 0px)`,
 }));
 
 const layer2 = computed<CSSProperties>(() => ({
   ...layerBase,
   // @ts-expect-error this is fine
   top: `-${target.value?.clientHeight / 1.6}px`,
-  transform: `translate3d(${parallax.tilt * 30}px, ${parallax.roll * 30}px, 0px)`,
+  transform: `translate3d(${parallax.tilt * 20}px, ${parallax.roll * 20}px, 0px)`,
 }));
 
 const layer4 = computed(() => ({
   ...layerBase,
-  transform: `translate3d(${parallax.tilt * 50}px, ${parallax.roll * 50}px, 0px)`,
+  transform: `translate3d(${parallax.tilt * 30}px, ${parallax.roll * 30}px, 0px)`,
 }));
 
 const layer5 = computed(() => ({
   ...layerBase,
-  transform: `translate3d(${parallax.tilt * 60}px, ${parallax.roll * 60}px, 0px)`,
+  transform: `translate3d(${parallax.tilt * 35}px, ${parallax.roll * 35}px, 0px)`,
 }));
 
 </script>
@@ -112,4 +112,5 @@ img {
   -webkit-user-select: none;
   -ms-user-select: none;
 }
+
 </style>
