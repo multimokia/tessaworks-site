@@ -48,16 +48,26 @@ import {reactive} from "@vue/reactivity";
 import {computed, CSSProperties, useTemplateRef} from "vue";
 import {useParallax} from "@vueuse/core";
 
-import bg from "@/assets/tessa-parallax/bg.png";
-import bigArmsBack from "@/assets/tessa-parallax/big-arms.png";
-import blackHoleVortex from "@/assets/tessa-parallax/vortex2.png";
-import blackHoleCore from "@/assets/tessa-parallax/black-hole-core2.png";
-import blackHoleOtherCores from "@/assets/tessa-parallax/cores2.png";
-import bigArmsFront from "@/assets/tessa-parallax/big-arms-front.png";
-import tessa from "@/assets/tessa-parallax/tessa-noglow.png"
-import tessaGlow from "@/assets/tessa-parallax/tessa-glow.png"
-import smallArms from "@/assets/tessa-parallax/small-arms.png"
+// import bg from "@/assets/tessa-parallax/bg.png";
+// import bigArmsBack from "@/assets/tessa-parallax/big-arms.png";
+// import blackHoleVortex from "@/assets/tessa-parallax/vortex2.png";
+// import blackHoleCore from "@/assets/tessa-parallax/black-hole-core2.png";
+// import blackHoleOtherCores from "@/assets/tessa-parallax/cores2.png";
+// import bigArmsFront from "@/assets/tessa-parallax/big-arms-front.png";
+// import tessa from "@/assets/tessa-parallax/tessa-noglow.png"
+// import tessaGlow from "@/assets/tessa-parallax/tessa-glow.png"
+// import smallArms from "@/assets/tessa-parallax/small-arms.png"
 import signature from "@/assets/tessa-parallax/signature.png"
+
+import bg from "@/assets/tessa-parallax/compressed/bg.webp";
+import bigArmsBack from "@/assets/tessa-parallax/compressed/big-arms.webp";
+import blackHoleVortex from "@/assets/tessa-parallax/compressed/vortex2.webp";
+import blackHoleCore from "@/assets/tessa-parallax/compressed/black-hole-core2.webp";
+import blackHoleOtherCores from "@/assets/tessa-parallax/compressed/cores2.webp";
+import bigArmsFront from "@/assets/tessa-parallax/compressed/big-arms-front.webp";
+import tessa from "@/assets/tessa-parallax/compressed/tessa-noglow.webp"
+import tessaGlow from "@/assets/tessa-parallax/compressed/tessa-glow.webp"
+import smallArms from "@/assets/tessa-parallax/compressed/small-arms.webp"
 
 const target = useTemplateRef('target');
 const parallax = reactive(useParallax(target));
